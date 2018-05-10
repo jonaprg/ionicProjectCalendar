@@ -19,6 +19,7 @@ export class CalDetailsPage {
       this.calendar.listEventsInRange(start,end)
       .then(data => {
         this.events = data;
+        
       })
     }
   }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
+import { CalDetailsPage } from '../cal-details/cal-details';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -15,17 +16,23 @@ export class HomePage {
     })
   }
   addEvent(cal) {
-    let date = new Date();
+    let startDate = new Date();
+    let endDate = new Date();
     let options = { 
       calendarId: cal.id,
-      calendarName: cal.name, 
-      url: 'https://ionicacademy.com', 
+      calendarName: cal.name,  
       firstReminderMinutes: 15
     };
-    this.calendar.createEventInteractivelyWithOptions('My new Event', 'Hello','Some special notes',date,date,options)
+    this.calendar.createEventInteractivelyWithOptions('Un nou event','Vic','Això es un event nou',startDate,endDate,options)
     .then(() => {});
   }
   openCal(cal) {
-    this.navCtrl.push('CalDetailsPage' , {name : cal.name});
+    this.navCtrl.push(CalDetailsPage , cal);
+  }
+  addCalendar() {
+    this.calendar.createCalendar('MyCalendar').then(
+      (msg) => { console.log(msg); },
+      (err) => { console.log(err); }
+    );
   }
 }
