@@ -4,23 +4,24 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Calendar } from  '@ionic-native/calendar';
-import { MyApp } from './app.component';
+import { CalendarApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CalDetailsPage } from '../pages/cal-details/cal-details';
+
 @NgModule({
   declarations: [
-    MyApp,
+    CalendarApp,
     HomePage,
     CalDetailsPage
   ],
   imports: [
     
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(CalendarApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    CalendarApp,
     HomePage,
     CalDetailsPage
   ],

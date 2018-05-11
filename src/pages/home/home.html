@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      My calendars
+      Els meus calendaris
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addCalendar()">
@@ -11,14 +11,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <ion-list>
     <ion-item *ngFor="let cal of calendars" tappable>
       <button ion-button icon-only item-start clear (click)="addEvent(cal)">
           <ion-icon name="add"></ion-icon>
       </button>
       {{ cal.name }}
-      <p>{{ cal.type }}</p>
+      
       <button ion-button icon-only item-end clear (click)="openCal(cal)">
             <ion-icon name="arrow-forward"></ion-icon>
       </button>

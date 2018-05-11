@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 import { CalDetailsPage } from '../cal-details/cal-details';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -29,10 +30,5 @@ export class HomePage {
   openCal(cal) {
     this.navCtrl.push(CalDetailsPage , cal);
   }
-  addCalendar() {
-    this.calendar.createCalendar('MyCalendar').then(
-      (msg) => { console.log(msg); },
-      (err) => { console.log(err); }
-    );
-  }
+ 
 }

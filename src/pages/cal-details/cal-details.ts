@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,Platform } from 'ionic-angular';
+import { NavController, NavParams,Platform} from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
+
 
 
 @Component({
@@ -20,10 +21,14 @@ export class CalDetailsPage {
       .then(data => {
         this.events = data;
         
-      })
+      });
     }
+    else if(this.plt.is('ios')) {
+      this.calendar.findAllEventsInNamedCalendar(this.calName)
+      .then(data => {
+        this.events = data;
+      });
+    }
+    
   }
-
-
-
 }
