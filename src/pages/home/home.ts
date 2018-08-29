@@ -17,14 +17,12 @@ export class HomePage {
     })
   }
   addEvent(cal) {
-    let startDate = new Date();
-    let endDate = new Date();
     let options = { 
       calendarId: cal.id,
       calendarName: cal.name,  
       firstReminderMinutes: 15
     };
-    this.calendar.createEventInteractivelyWithOptions('Un nou event','Vic','Això es un event nou',startDate,endDate,options)
+    this.calendar.createEventInteractivelyWithOptions('Un nou event','Vic','Això es un event nou',new Date(),new Date(),options)
     .then(() => {});
   }
   openCal(cal) {
